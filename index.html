@@ -2,62 +2,296 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <title>Titre de la page</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="This website replicates a mock-up designed for a school project. It showcases a luxurious hotel and resort-themed interface with sections dedicated to hotels, restaurants, services, and activities.">
+    <title>replicates mock-up design</title>
+    <meta name="keywords" content="hotels, luxury, amenities">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            color: rgb(128, 128, 128, 1);
+        }
+
+        header {
+
+            display: flex;
+            background-image: url("assets/misc/grille.png");
+            justify-content: space-around;
+            align-items: center;
+            padding: 0 10%;
+            height: 25vh;
+        }
+
+        header #logo {
+
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .menuhamburger {
+            display:none;
+        }
+
+        nav {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            margin-top: 2vh;
+            margin-bottom: 2vh;
+        }
+
+        nav .submenu {
+            margin: 0;
+            padding: 0;
+            margin-top: 0.8vh;
+            margin-left: 0.5vh;
+        }
+
+        .submenu li {
+            margin: 0.2vh 0;
+            font-family: "Droid Sans";
+        }
+
+        .wrap {
+
+            padding: 1vh;
+            width: 9rem;
+        }
+
+        .longerwrap {
+
+            width: 12rem;
+            padding: 1vh;
+        }
+
+        .title {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .wrap .title {
+            padding: 0.5vh;
+        }
+
+        .longerwrap .title {
+            padding: 0.5vh;
+        }
+
+        .video {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2vh 0;
+        }
+
+
+        .hook {
+
+            display: flex;
+            height: 10vh;
+            background-image: url("assets/misc/grille.png");
+            background-attachment: fixed;
+            background-size: auto, cover;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            padding-top: 1.2vh;
+        }
+
+        #hookP {
+            font-family: "Droid Serif";
+        }
+
+
+        .topics h4 {
+            color: orange;
+            font-family: 'Oswald', sans-serif;
+            font-weight: bold;
+        }
+
+        .topics .dateDePublication {
+            font-style: italic;
+            font-size: 0.8rem;
+            color: rgb(128, 128, 128, 0.6)
+        }
+
+        .contenuArticle {
+            margin-top: 1vh;
+        }
+
+        .lirePlus {
+            margin-bottom: 5vh;
+            font-style: italic;
+            font-family: "Droid Sans";
+        }
+
+        .imageAccrobranche {
+            width: 30%;
+            border: 1px solid rgb(128, 128, 128, 0.1);
+            padding: 1.1vh;
+            margin-bottom: 1.3vh;
+            margin-right: 0.8vh;
+        }
+
+        #topics {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url("assets/misc/grille.png");
+
+        }
+
+        .label {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: rgb(128, 128, 128, 0.7);
+
+        }
+
+        .date {
+            font-size: 0.9rem;
+            font-family: "Droid Serif";
+            font-style: italic;
+        }
+
+        footer {
+
+            display: flex;
+            height: 10vh;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .informations, .dernierBillet, .DernierCommentaire, .blabla {
+            margin: 0;
+            padding: 0;
+        }
+
+
+
+        .contact li {
+            font-size: 0.9rem;
+        }
+
+        .copyright, .logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5vh;
+            height: 100%;
+        }
+
+        @media (max-width: 1250px) {
+            header {
+                height: 17vh;
+            }
+
+            .navbar {
+                position: fixed;
+                inset: 0 0 0 40%;
+                background: black;
+                z-index: 100;
+                height: 100%;
+                flex-direction: column;
+                padding: min(10vh, 50rem)2em;
+                transform: translateX(100%);
+                transition: 350ms ease-out;
+            }
+
+            .navbar.active {
+                display: block;
+                transform: translateX(0%);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+
+            .menuhamburger {
+                position: absolute;
+                background: url(assets/misc/menuhamburger.png);
+                background-repeat: no-repeat;
+                width: 5em;
+                aspect-ratio: 1;
+                top: 4%;
+                right: 2rem;
+                z-index: 1000;
+                border: none;
+                display: block;
+                cursor: pointer;
+            }
+
+            #logo {
+                position: absolute;
+                top: 2%;
+                left: 2rem;
+            }
+        }
+    </style>
 </head>
 <header>
     <img src="assets/misc/logo.png" alt="logo" id="logo">
+    <button class="menuhamburger" aria-controls="navbar" aria-expanded="false" style="z-index: 1000" ><span class="sr-only"></span>
+    </button>
     <nav>
-        <div class="wrap">
-            <div class="title" style="border-bottom: 0.7vh solid orangered">HOTELS</div>
-            <ul class="submenu">
-                <li>Chambres</li>
-                <li>Lofts</li>
-                <li>Appartements</li>
-            </ul>
-        </div>
-        <div class="longerwrap">
-            <div class="title" style="border-bottom: 0.7vh solid orange">RESTAURANTS</div>
-            <ul class="submenu">
-                <li>Gastronomiques</li>
-                <li>Fast-foods</li>
-                <li>Autres saveurs</li>
-            </ul>
-        </div>
-        <div class="wrap">
-            <div class="title" style="border-bottom: 0.7vh solid lightgreen">SERVICES</div>
-            <ul class="submenu">
-                <li>Sauna</li>
-                <li>Hammam</li>
-                <li>Jacuzzi</li>
-            </ul>
-        </div>
-        <div class="wrap">
-            <div class="title" style="border-bottom: 0.7vh solid blue">ACTIVITES</div>
-            <ul class="submenu">
-                <li>Accrobranche</li>
-                <li>Bowling</li>
-                <li>Golf privé</li>
-            </ul>
-        </div>
-        <div class="longerwrap">
-            <div class="title" style="border-bottom: 0.7vh solid purple">PLUS</div>
-            <ul class="submenu">
-                <li>Baby sitting</li>
-                <li>Garde d'animaux</li>
-                <li>Ménage</li>
-            </ul>
+        <div id="navbar" data-visible="false" class="navbar">
+            <div class="wrap">
+                <div class="title" style="border-bottom: 0.7vh solid orangered">HOTELS</div>
+                <ul class="submenu">
+                    <li>Chambres</li>
+                    <li>Lofts</li>
+                    <li>Appartements</li>
+                </ul>
+            </div>
+            <div class="longerwrap">
+                <div class="title" style="border-bottom: 0.7vh solid orange">RESTAURANTS</div>
+                <ul class="submenu">
+                    <li>Gastronomiques</li>
+                    <li>Fast-foods</li>
+                    <li>Autres saveurs</li>
+                </ul>
+            </div>
+            <div class="wrap">
+                <div class="title" style="border-bottom: 0.7vh solid lightgreen">SERVICES</div>
+                <ul class="submenu">
+                    <li>Sauna</li>
+                    <li>Hammam</li>
+                    <li>Jacuzzi</li>
+                </ul>
+            </div>
+            <div class="wrap">
+                <div class="title" style="border-bottom: 0.7vh solid blue">ACTIVITES</div>
+                <ul class="submenu">
+                    <li>Accrobranche</li>
+                    <li>Bowling</li>
+                    <li>Golf privé</li>
+                </ul>
+            </div>
+            <div class="longerwrap">
+                <div class="title" style="border-bottom: 0.7vh solid purple">PLUS</div>
+                <ul class="submenu">
+                    <li>Baby sitting</li>
+                    <li>Garde d'animaux</li>
+                    <li>Ménage</li>
+                </ul>
+            </div>
         </div>
     </nav>
 </header>
 <body>
     <div class="separateur" style="margin-top: 1vh; border: 1px solid rgb(128, 128, 128, 0.1)"></div>
     <div class="image-fluid video">
-        <iframe width="40%" height="90%" src="https://www.youtube.com/embed/YY3GpU4YAlA" title="HOTEL PRESENTATION WITH POWERPOINT" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="700em" height="400em" src="https://www.youtube.com/embed/YY3GpU4YAlA" title="HOTEL PRESENTATION WITH POWERPOINT" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
     <div class="separateur" style="margin-bottom: 1vh; border: 1px solid rgb(128, 128, 128, 0.1)"></div>
     <div class="hook">
@@ -67,7 +301,7 @@
     </div>
     <div class="separateur" style="margin-bottom: 3vh; margin-top: 1vh; border: 1px solid rgb(128, 128, 128, 0.1)"></div>
     <div class="container">
-        <div class="topics">
+        <section class="topics">
             <div class="row">
                 <div class="col-lg-3 col-12 golf">
                     <h4 class="titreArticles">GOLF</h4>
@@ -109,7 +343,7 @@
                     <img src="assets/misc/accrobranche.jpg" alt="accrobranche" class="imageAccrobranche">
                 </div>
             </div>
-        </div>
+        </section>
     </div>
     <div class="separateur" style="margin-bottom: 1vh; margin-top: 4vh; border: 1px solid rgb(128, 128, 128, 0.1)"></div>
     <div class="container-fluid" id="topics" style="height: auto">
@@ -161,12 +395,12 @@
         </ul>
     </div>
     <div class="col-6 logos">
-        <img src="assets/misc/rss.png" alt="rss logo">
-        <img src="assets/misc/email.png" alt="email logo">
-        <img src="assets/misc/twitter.png" alt="twitter logo">
-        <img src="assets/misc/facebook.png" alt="facebook logo">
-        <img src="assets/misc/pinterest.png" alt="pinterest logo">
-        <img src="assets/misc/google.png" alt="google logo">
+        <img src="assets/misc/rss.png" href="rss.com" alt="rss logo">
+        <img src="assets/misc/email.png" href="email.fr" alt="email logo">
+        <img src="assets/misc/twitter.png" href="https://twitter.com/" alt="twitter logo">
+        <img src="assets/misc/facebook.png" href="facebook.com" alt="facebook logo">
+        <img src="assets/misc/pinterest.png" href="pinterest.fr" alt="pinterest logo">
+        <img src="assets/misc/google.png" href="google.com" alt="google logo">
     </div>
 </footer>
 </html>
