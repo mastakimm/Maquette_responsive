@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    color: rgb(128, 128, 128, 1);
+}
+
+header {
+    border: 2px solid black;
+
+    display: flex;
+    background-image: url("assets/misc/grille.png");
+    justify-content: space-around;
+    align-items: center;
+    height: 25vh;
+    padding: 0 10%;
+}
+
+header #logo {
+    border: 2px solid red;
+
+    align-items: center;
+    justify-content: space-around;
+}
+
+nav {
+    border: 2px solid black;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+nav .submenu {
+    margin: 0;
+    padding: 0;
+    margin-top: 0.8vh;
+    margin-left: 0.5vh;
+}
+
+.submenu li {
+    margin: 0.2vh 0;
+    font-family: "Droid Sans";
+}
+
+.wrap {
+    border: 2px solid yellow;
+
+    padding: 1vh;
+    width: 9rem;
+}
+
+.longerwrap {
+    border: 2px solid green;
+
+    width: 12rem;
+    padding: 1vh;
+}
+
+.title {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.wrap .title {
+    padding: 0.5vh;
+}
+
+.longerwrap .title {
+    padding: 0.5vh;
+}
+
+.video {
+    border: 2px solid yellow;
+
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hook {
+    border: 2px solid red;
+
+    display: flex;
+    height: 10vh;
+    background-image: url("assets/misc/grille.png");
+    background-attachment: fixed;
+    background-size: auto, cover;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    padding-top: 1.2vh;
+}
+
+#hookP {
+    font-family: "Droid Serif";
+}
+
+.golf, .accrobranche, .fastfood, .commentaires {
+    border: 2px solid black;
+}
+
+.topics h4 {
+    color: orange;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+}
+
+.topics .dateDePublication {
+    font-style: italic;
+    font-size: 0.8rem;
+    color: rgb(128, 128, 128, 0.6)
+}
+
+.contenuArticle {
+    margin-top: 1vh;
+}
+
+.lirePlus {
+    margin-bottom: 5vh;
+    font-style: italic;
+    font-family: "Droid Sans";
+}
+
+.imageAccrobranche {
+    width: 30%;
+    border: 1px solid rgb(128, 128, 128, 0.1);
+    padding: 1.1vh;
+    margin-bottom: 1.3vh;
+    margin-right: 0.8vh;
+}
+
+#topics {
+    border: 2px solid indigo;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("assets/misc/grille.png");
+
+}
+
+.label {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: rgb(128, 128, 128, 0.7);
+
+}
+
+.date {
+    font-size: 0.9rem;
+    font-family: "Droid Serif";
+    font-style: italic;
+}
+
+footer {
+    border: 1px solid darkred;
+
+    display: flex;
+    height: 10vh;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.informations, .dernierBillet, .DernierCommentaire, .blabla {
+    margin: 0;
+    padding: 0;
+}
+
+.contact, .lastinformation, .lastcomment, .blablas {
+    border: 2px solid red;
+}
+
+.contact li {
+    font-size: 0.9rem;
+}
+
+.copyright, .logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5vh;
+    height: 100%;
+}
